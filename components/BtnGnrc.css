@@ -1,0 +1,14 @@
+.mainBtn {
+  border: 1px solid gray;
+  padding: 4px 16px;
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mainBtn:hover {
+  background-color: black;
+  color: white;
+  transform: scale(0.95);
+}

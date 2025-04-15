@@ -1,0 +1,86 @@
+.modalContainer {
+  position: fixed; /* Fixed position to ensure the modal stays in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99; /* Ensure modal is on top of other content */
+}
+
+/* Modal content box */
+.modalContent {
+  background-color: white; /* White background for the modal */
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%; /* Width of the modal */
+  max-width: 500px; /* Max width to make sure it doesn't get too large */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  position: relative; /* Position relative for positioning the close button */
+}
+
+/* Close button style */
+.modalContent .BtnGnrc {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #888; /* Grey color */
+  padding: 5px;
+}
+
+.modalContent .BtnGnrc:hover {
+  color: #333; /* Darker color on hover */
+}
+
+/* Modal form styles */
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form fields */
+}
+
+.modalForm label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.modalForm input,
+.modalForm select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Buttons at the bottom of the modal */
+.modalForm > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Add margin-bottom to ensure last button doesn't touch the bottom edge */
+.modalForm > div:last-child {
+  margin-bottom: 10px;
+}
+
+/* Styles for buttons inside the modal */
+
+.divClosetContainer {
+  padding: 20px;
+}
+
+.divClosetTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}

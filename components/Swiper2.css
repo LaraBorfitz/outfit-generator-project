@@ -1,0 +1,26 @@
+.divh2 {
+  width: 10%;
+  display: flex;
+  border-right: 1px solid black;
+}
+
+.divText {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+  font-size: 35px;
+  transform: rotate(180deg);
+  text-align: right;
+  margin-top: 20px;
+}
+
+.divSwiper {
+  display: flex;
+  width: 90%;
+}
+
+.divGalleryImg {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@200..800&family=Oswald:wght@200..700&family=Rampart+One&display=swap");
+
+.fatherDivNewHeader {
+  display: flex;
+  width: 100%;
+  height: 7vh;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid black;
+  position: fixed;
+  overflow: visible;
+  z-index: 99;
+}
+
+.fatherDivNewHeader > * {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+}
+
+.divNewHeader1 {
+  width: 12%;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 0.9em;
+}
+
+.divNewHeader2 {
+  width: 14%;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.divNewHeader3 {
+  width: 58%;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  justify-content: space-evenly;
+}
+
+.divNewHeader4 {
+  width: 20%;
+  border-bottom: 1px solid black;
+  justify-content: space-around;
+}
+
+.menuItem {
+  font-family: "Manrope", sans-serif;
+  margin: 3px;
+  cursor: pointer;
+}

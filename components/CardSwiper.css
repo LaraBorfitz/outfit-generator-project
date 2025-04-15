@@ -1,0 +1,15 @@
+.divGallery {
+  height: 70vh;
+}
+
+.divCard {
+  padding: 8px;
+  font-size: 0.8em;
+  text-align: center;
+  height: 25%;
+}
+
+.divGalleryImg {
+  object-fit: contain;
+  height: 75%;
+}

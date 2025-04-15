@@ -1,0 +1,13 @@
+.divClosetContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.divClosetTitle {
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+}

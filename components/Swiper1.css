@@ -1,0 +1,36 @@
+.fatherDiv {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 50px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  gap: 30px;
+  font-size: 0.9em;
+}
+
+.childCards {
+  padding: 20px;
+  /* margin-bottom: 5px; */
+  margin-left: 15px;
+}
+
+#addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Para pantallas con un ancho máximo de 768px */
+@media (max-width: 600px) {
+  .fatherDiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+  }
+
+  .childCards {
+    padding: 10px;
+    /* margin-bottom: 5px; */
+    margin-left: 0px;
+  }
+}
