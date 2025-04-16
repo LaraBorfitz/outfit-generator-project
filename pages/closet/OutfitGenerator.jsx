@@ -12,13 +12,20 @@ const OutfitGenerator = () => {
     bottom: "",
     shoes: "",
   });
-  // console.log("op 1> ", generated.top);
-  // console.log("op 2> ", generated["top"]);
 
   function handleGeneration() {
     const result = generateOutfit(closet);
     setGenerated(result);
-    console.log("resultado de generatedOutfit: ", result);
+  }
+
+  function handleGenerationSummer() {
+    const result = generateOutfit(closet, "Primavera/Verano");
+    setGenerated(result);
+  }
+
+  function handleGenerationWinter() {
+    const result = generateOutfit(closet, "Invierno/Otoño");
+    setGenerated(result);
   }
 
   return (
@@ -31,8 +38,22 @@ const OutfitGenerator = () => {
         alignItems: "center",
       }}
     >
-      <h2>titulo</h2>
-      <BtnGrnc txt="Generar Outfit" onClick={() => handleGeneration()} />
+      <h2>Outfit del día</h2>
+
+      <div style={{ display: "flex", flexDirection: "row", gap: 10 }}>
+        <BtnGrnc
+          txt="Generar Outfit Random"
+          onClick={() => handleGeneration()}
+        />
+        <BtnGrnc
+          txt="Generar Outfit Primavera/Verano"
+          onClick={() => handleGenerationSummer()}
+        />
+        <BtnGrnc
+          txt="Generar Outfit Invierno/Otoño"
+          onClick={() => handleGenerationWinter()}
+        />
+      </div>
 
       <div style={{ display: "flex", flexDirection: "column", paddingTop: 20 }}>
         {Object.keys(generated).map((key) => (
@@ -43,6 +64,7 @@ const OutfitGenerator = () => {
               height: 140,
               marginBottom: 20,
               border: "1px solid gray",
+              objectFit: "contain",
             }}
             src={generated[key] ? BASE_URL + generated[key] : noImg}
           />

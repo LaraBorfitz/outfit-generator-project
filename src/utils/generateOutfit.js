@@ -1,69 +1,51 @@
-export function generateOutfit(closet) {
-  function getRandomItem(arr) {
-    const numeroRandom = Math.floor(Math.random() * arr.length);
-    return arr[numeroRandom];
+const getRandomItem = (arr) => {
+  const numeroRandom = Math.floor(Math.random() * arr.length);
+  return arr[numeroRandom];
+};
+
+const filterBySeason = (items, season) => {
+  const seasons =
+    season === "Primavera/Verano"
+      ? ["primavera", "verano"]
+      : ["invierno", "otoño"];
+  return items.filter((item) => seasons.includes(item.estacion.toLowerCase()));
+};
+
+export function generateOutfit(closet, estacionElegida) {
+  const top = closet.filter((item) => item.categoria === "Parte de arriba");
+  const bottom = closet.filter((item) => item.categoria === "Parte de abajo");
+  const shoes = closet.filter((item) => item.categoria === "Calzado");
+
+  let filteredTop = top;
+  let filteredBottom = bottom;
+  let filteredShoes = shoes;
+
+  if (estacionElegida) {
+    filteredTop = filterBySeason(top, estacionElegida);
+    filteredBottom = filterBySeason(bottom, estacionElegida);
+    filteredShoes = filterBySeason(shoes, estacionElegida);
+
+    console.log("filteredTop ES:", filteredTop);
+    console.log("filteredBottom ES: ", filteredBottom);
+    console.log("filteredShoes ES: ", filteredShoes);
   }
 
-  let top = [];
-  let bottom = [];
-  let shoes = [];
+  const topRandom = getRandomItem(filteredTop.length > 0 ? filteredTop : top);
+  const bottomRandom = getRandomItem(
+    filteredBottom.length > 0 ? filteredBottom : bottom
+  );
+  const shoesRandom = getRandomItem(
+    filteredShoes.length > 0 ? filteredShoes : shoes
+  );
 
-  closet.map((item) => {
-    if (item.categoria === "Parte de arriba") {
-      top.push(item);
-    } else if (item.categoria === "Parte de abajo") {
-      bottom.push(item);
-    } else if (item.categoria === "Calzado") {
-      shoes.push(item);
-    }
-  });
-
-  console.log("top ", top);
-  console.log("bottom ", bottom);
-  console.log("shoes ", shoes);
-
-  const topRandom = getRandomItem(top);
-
-  const estacion = topRandom.estacion;
-
-  const estacionBottom = [];
-  const estacionShoes = [];
-
-  bottom.map((item) => {
-    if (item.estacion === estacion) {
-      estacionBottom.push(item);
-    }
-  });
-
-  shoes.map((item) => {
-    if (item.estacion === estacion) {
-      estacionShoes.push(item);
-    }
-  });
-
-  let randomBottom;
-  let randomShoes;
-
-  if (estacionBottom.length == 0) {
-    randomBottom = getRandomItem(bottom);
-  } else {
-    randomBottom = getRandomItem(estacionBottom);
-  }
-
-  if (estacionShoes.length == 0) {
-    randomShoes = getRandomItem(shoes);
-  } else {
-    randomShoes = getRandomItem(estacionShoes);
-  }
-
-  console.log("topRandom", topRandom);
-  console.log("randomBottom", randomBottom);
-  console.log("randomShoes", randomShoes);
+  console.log("topRandom ES:", topRandom);
+  console.log("bottomRandom ES: ", bottomRandom);
+  console.log("shoesRandom ES: ", shoesRandom);
 
   const finalResponse = {
-    top: topRandom.imageURL || "",
-    bottom: randomBottom.imageURL || "",
-    shoes: randomShoes.imageURL || "",
+    top: topRandom.imageURL || noImg,
+    bottom: bottomRandom.imageURL || noImg,
+    shoes: shoesRandom.imageURL || noImg,
   };
 
   return finalResponse;
