@@ -6,6 +6,7 @@ import UserCloset from "../pages/UserCloset";
 import { useAppContext } from "../contexts/FunctionContext";
 import LoadingPage from "../pages/LoadingPage";
 import Footer from "../components/Footer";
+import PropTypes from 'prop-types';
 
 const Navigator = () => {
   const { token, closet } = useAppContext();
@@ -55,4 +56,9 @@ const ProtectedRoute = ({ children }) => {
   const { token } = useAppContext();
   return token ? children : <Navigate to="/login" />;
 };
+
+ProtectedRoute.propTypes = {
+  children: PropTypes.node.isRequired
+};
+
 export default Navigator;

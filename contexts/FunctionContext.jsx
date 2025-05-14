@@ -51,6 +51,7 @@ export const AuthProvider = ({ children }) => {
     const fetchCloset = async () => {
       try {
         const data = await getPrivateCloset();
+      
         setCloset(data.closet);
         setIsLoading(false);
       } catch (error) {
@@ -71,6 +72,12 @@ export const AuthProvider = ({ children }) => {
     isLoading,
     publicClothes,
   };
+  console.log('valor de closet?? ', closet);
+
+  // []
+  // []
+  // [contenido]         
+    
 
   return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>;
 };

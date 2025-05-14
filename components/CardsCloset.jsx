@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import {
   Card,
   CardHeader,
@@ -12,12 +11,12 @@ import { red } from "@mui/material/colors";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Swal from "sweetalert2";
 import {
-  getPrivateCloset,
   deletePrivateCloset,
 } from "../services/closetService";
 import "../components/CardsCloset.css";
 import BtnGrnc from "./BtnGnrc";
 import { useAppContext } from "../contexts/FunctionContext";
+import PropTypes from 'prop-types';
 
 const CardsCloset = ({ setModalState }) => {
   const { closet, setRefresh } = useAppContext();
@@ -52,7 +51,7 @@ const CardsCloset = ({ setModalState }) => {
   return (
     <div className="divCardsClosetContainer">
       <div className="divCardsCloset">
-        {closet.map((card) => (
+        {(closet || []).map((card) => (
           <Card key={card._id} sx={{ maxWidth: 345 }}>
             <CardHeader
               avatar={
@@ -71,7 +70,7 @@ const CardsCloset = ({ setModalState }) => {
               style={{ objectFit: "contain" }}
               component="img"
               height="194"
-              image={"http://localhost:3002" + card.imageURL}
+              image={`${import.meta.env.VITE_API_URL || 'http://localhost:3002'}/api/images/${card.imageURL.split('/').pop()}`}
               alt={card.nombre}
             />
             <CardContent>
@@ -99,6 +98,10 @@ const CardsCloset = ({ setModalState }) => {
       </div>
     </div>
   );
+};
+
+CardsCloset.propTypes = {
+  setModalState: PropTypes.func.isRequired
 };
 
 export default CardsCloset;
