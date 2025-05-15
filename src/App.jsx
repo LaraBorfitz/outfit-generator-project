@@ -7,11 +7,13 @@ import { store } from "../redux/store";
 
 function App() {
   return ( 
-  <Provider store={store}>
+    <Provider store={store}>
     <AuthProvider>
+    
       <BrowserRouter>
         <Navigator />
       </BrowserRouter>
+     
     </AuthProvider>
     </Provider>
   );

@@ -1,21 +1,29 @@
 import BtnGnrc from "../components/BtnGnrc";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAppContext } from "../contexts/FunctionContext";
+import { useDispatch } from "react-redux";
+import { useLoginMutation } from "../redux/slices/apiSlice";
+import { setCredentials } from "../redux/slices/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { login } = useAppContext();
+//  const { login } = useAppContext();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const [login, { isLoading: loadingLogin }] = useLoginMutation();
+  const navigate = useNavigate();
 
   async function handleLogin() {
-    const data = await login(username, password);
-    if (!data) {
-      alert("Failed to login");
-    } else {
-      navigate("/");
-    }
+    const data = await login({username, password}).unwrap();
+    console.log("data en login es: ", data);
+    
+    dispatch(setCredentials(data));
+    navigate("/");
+
+    
+   
   }
 
   return (

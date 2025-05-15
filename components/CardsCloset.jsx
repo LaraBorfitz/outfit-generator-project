@@ -29,6 +29,9 @@ const CardsCloset = ({ setModalState }) => {
       confirmButtonText: "Delete",
       denyButtonText: "Cancel",
     });
+
+
+    
     if (result.isConfirmed) {
       try {
         const success = await deletePrivateCloset(id);

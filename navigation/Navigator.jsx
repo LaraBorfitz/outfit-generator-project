@@ -53,7 +53,7 @@ const Navigator = () => {
 };
 
 const ProtectedRoute = ({ children }) => {
-  const { token } = useAppContext();
+  const token = localStorage.getItem("token");
   return token ? children : <Navigate to="/login" />;
 };
 
