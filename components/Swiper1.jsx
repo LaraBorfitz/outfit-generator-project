@@ -4,14 +4,16 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "./Swiper1.css";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import BtnGnrc from "./BtnGnrc";
 import { useAppContext } from "../contexts/FunctionContext";
+import { CarritoContext } from "../contexts/CarritoContext";
 
 const OutfitCards = () => {
   const { publicClothes } = useAppContext();
+  const { handleAddToCart } = useContext(CarritoContext);
   const clothes = publicClothes;
   const [index, setIndex] = useState(0);
   /*  const swiperRef = useRef(null); */
@@ -90,7 +92,10 @@ const OutfitCards = () => {
       <div className="fatherDiv">
         {isMobile == true && (
           <div id="addBtn" className="childCards">
-            <BtnGnrc txt="ADD TO CART" />
+            <BtnGnrc
+              txt="ADD TO CART"
+              onClick={() => handleAddToCart(clothes[index])}
+            />
           </div>
         )}
         <div className="childCards">
@@ -109,7 +114,10 @@ const OutfitCards = () => {
 
         {isMobile == false && (
           <div id="addBtn" className="childCards">
-            <BtnGnrc txt="ADD TO CART" />
+            <BtnGnrc
+              txt="ADD TO CART"
+              onClick={() => handleAddToCart(clothes[index])}
+            />
           </div>
         )}
       </div>

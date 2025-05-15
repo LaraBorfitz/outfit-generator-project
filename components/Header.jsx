@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "../components/Header.css";
 import * as React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../contexts/FunctionContext";
+import { CarritoContext } from "../contexts/CarritoContext";
 
 const NewHeader = () => {
   const [open, setOpen] = useState(null);
   const navigate = useNavigate();
   const { logout } = useAppContext();
-
+  const { cart } = useContext(CarritoContext);
+  const cartTotal = cart.reduce((acc, item) => acc + item.cantidad, 0);
   const handleClick = (event) => {
     setOpen(event.currentTarget);
   };
@@ -43,7 +45,27 @@ const NewHeader = () => {
             ACCOUNT
           </div>
 
-          <div style={{ cursor: "pointer" }}>BAG</div>
+          <div style={{ position: "relative", cursor: "pointer" }}>
+            {cartTotal > 0 && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: -6,
+                  right: -10,
+                  backgroundColor: "red",
+                  color: "white",
+                  borderRadius: "50%",
+                  fontSize: "0.65em",
+                  padding: "2px 5px",
+                  minWidth: 18,
+                  textAlign: "center",
+                }}
+              >
+                {cartTotal}
+              </div>
+            )}
+            BAG
+          </div>
         </div>
 
         <Menu
