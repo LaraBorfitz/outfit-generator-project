@@ -1,13 +1,14 @@
 import { useState } from "react";
 import "../components/Header.css";
-import * as React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../contexts/FunctionContext";
+import Cart from "./Cart";
 
 const NewHeader = () => {
   const [open, setOpen] = useState(null);
+  const [cartOpen, setCartOpen] = useState(null);
   const navigate = useNavigate();
   const { logout } = useAppContext();
 
@@ -16,6 +17,13 @@ const NewHeader = () => {
   };
   const handleClose = () => {
     setOpen(null);
+  };
+
+  const handleCartClick = (event) => {
+    setCartOpen(event.currentTarget);
+  };
+  const handleCartClose = () => {
+    setCartOpen(null);
   };
 
   return (
@@ -43,7 +51,7 @@ const NewHeader = () => {
             ACCOUNT
           </div>
 
-          <div style={{ cursor: "pointer" }}>BAG</div>
+          <Cart />
         </div>
 
         <Menu
@@ -91,6 +99,19 @@ const NewHeader = () => {
           >
             Logout
           </MenuItem>
+        </Menu>
+
+        <Menu
+          style={{ marginTop: 10 }}
+          id="cart-menu"
+          anchorEl={cartOpen}
+          open={Boolean(cartOpen)}
+          onClose={handleCartClose}
+        >
+          <div style={{ padding: "20px", minWidth: "300px" }}>
+            <h3>Your Cart</h3>
+            <p>Cart items will appear here</p>
+          </div>
         </Menu>
       </div>
       <div style={{ height: "7vh", backgroundColor: "blueviolet" }}>hola</div>

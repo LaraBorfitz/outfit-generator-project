@@ -6,6 +6,7 @@ import { useAppContext } from "../contexts/FunctionContext";
 
 const Login = () => {
   const { login } = useAppContext();
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 

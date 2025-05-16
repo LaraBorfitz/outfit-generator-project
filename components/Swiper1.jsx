@@ -3,21 +3,25 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "./Swiper1.css";
-
-import { useState, useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import BtnGnrc from "./BtnGnrc";
 import { useAppContext } from "../contexts/FunctionContext";
+import { addToCart } from "../redux/slices/cartSlice";
 
 const OutfitCards = () => {
   const { publicClothes } = useAppContext();
   const clothes = publicClothes;
   const [index, setIndex] = useState(0);
-  /*  const swiperRef = useRef(null); */
   const isMobile = window.innerWidth < 720;
 
-  /* console.log("titleRef ", titleRef); */
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
+  };
 
   return (
     <div
@@ -90,7 +94,10 @@ const OutfitCards = () => {
       <div className="fatherDiv">
         {isMobile == true && (
           <div id="addBtn" className="childCards">
-            <BtnGnrc txt="ADD TO CART" />
+            <BtnGnrc
+              txt="ADD TO CART"
+              onClick={() => handleAddToCart(clothes[index])}
+            />
           </div>
         )}
         <div className="childCards">
@@ -109,7 +116,10 @@ const OutfitCards = () => {
 
         {isMobile == false && (
           <div id="addBtn" className="childCards">
-            <BtnGnrc txt="ADD TO CART" />
+            <BtnGnrc
+              txt="ADD TO CART"
+              onClick={() => handleAddToCart(clothes[index])}
+            />
           </div>
         )}
       </div>

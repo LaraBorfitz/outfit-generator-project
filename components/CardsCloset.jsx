@@ -10,13 +10,13 @@ import {
 import { red } from "@mui/material/colors";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Swal from "sweetalert2";
-import {
-  deletePrivateCloset,
-} from "../services/closetService";
+import { deletePrivateCloset } from "../services/closetService";
 import "../components/CardsCloset.css";
 import BtnGrnc from "./BtnGnrc";
 import { useAppContext } from "../contexts/FunctionContext";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const CardsCloset = ({ setModalState }) => {
   const { closet, setRefresh } = useAppContext();
@@ -29,6 +29,7 @@ const CardsCloset = ({ setModalState }) => {
       confirmButtonText: "Delete",
       denyButtonText: "Cancel",
     });
+
     if (result.isConfirmed) {
       try {
         const success = await deletePrivateCloset(id);
@@ -70,7 +71,7 @@ const CardsCloset = ({ setModalState }) => {
               style={{ objectFit: "contain" }}
               component="img"
               height="194"
-              image={`${import.meta.env.VITE_API_URL || 'http://localhost:3002'}/api/images/${card.imageURL.split('/').pop()}`}
+              image={API_URL + card.imageURL}
               alt={card.nombre}
             />
             <CardContent>
@@ -101,7 +102,7 @@ const CardsCloset = ({ setModalState }) => {
 };
 
 CardsCloset.propTypes = {
-  setModalState: PropTypes.func.isRequired
+  setModalState: PropTypes.func.isRequired,
 };
 
 export default CardsCloset;
