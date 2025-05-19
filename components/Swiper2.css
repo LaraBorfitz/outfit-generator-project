@@ -1,7 +1,12 @@
+.divRecommendationsContainer {
+  margin-top: 40px;
+}
+
 .divh2 {
   width: 10%;
   display: flex;
   border-right: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .divText {
@@ -17,6 +22,7 @@
 .divSwiper {
   display: flex;
   width: 90%;
+  border-bottom: 1px solid black;
 }
 
 .divGalleryImg {

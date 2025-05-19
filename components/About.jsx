@@ -1,63 +1,33 @@
-import "../components/About.css";
+import "./About.css";
+import { useNavigate } from "react-router-dom";
 
-import linkedin from "../src/assets/icons/linkedin.png";
-import mediosDeComunicacionSocial from "../src/assets/icons/medios-de-comunicacion-social.png";
-import instagram from "../src/assets/icons/logotipo-de-instagram.png";
-import whatsapp from "../src/assets/icons/whatsapp.png";
-import tiktok from "../src/assets/icons/tik-tok.png";
-import facebook from "../src/assets/icons/facebook.png";
-
-const About = () => {
+const AboutUs = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="divFather">
-        <div className="divh1">
-          <div>ABOUT US</div>
-        </div>
-
-        <div className="divChildAbout">
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe
-            voluptates minima veniam. Ea sequi, quaerat quo vitae nemo iusto
-            quam rem animi.
+      <div className="nc-about-section">
+        <div className="nc-about-container">
+          <div className="nc-about-title">SOBRE NOSOTROS</div>
+          <div className="nc-about-features">
+            <span className="nc-about-feature">Envíos a todo el país</span>
+            <span className="nc-feature-divider">•</span>
+            <span className="nc-about-feature">
+              Productos de edición limitada
+            </span>
+            <span className="nc-feature-divider">•</span>
+            <span className="nc-about-feature">Cambios fáciles</span>
+            <span className="nc-feature-divider">•</span>
+            <span className="nc-about-feature">Pagá en cuotas sin interés</span>
           </div>
-        </div>
-
-        <div className="divChildAbout">
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-        </div>
-
-        <div className="divSocialsContainer">
-          <div className="divFollow">
-            FOLLOW US!{" "}
-            <div className="divFollowIcons">
-              <img
-                style={{ objectFit: "contain", width: "20px" }}
-                src={instagram}
-                alt="Instagram"
-                className=""
-              />
-              <img
-                style={{ objectFit: "contain", width: "20px" }}
-                src={facebook}
-                alt="Facebook"
-              />
-              <img
-                style={{ objectFit: "contain", width: "20px" }}
-                src={tiktok}
-                alt="Tiktok"
-              />
-            </div>
-          </div>
-          <div className="divWorkWithUsContainer">
-            <div className="divWorkWithUs">Work with us</div>
-            <div className="divWorkImg">
-              <img
-                style={{ objectFit: "contain", width: "20px" }}
-                src={linkedin}
-                alt="Linkedin"
-              />
-            </div>
+          <div className="nc-outfit-generator">
+            <div className="nc-outfit-question">¿No sabés qué ponerte?</div>
+            <a
+              href="/closet"
+              className="nc-outfit-button"
+              onClick={() => navigate("/closet")}
+            >
+              PROBÁ NUESTRO GENERADOR DE OUTFITS
+            </a>
           </div>
         </div>
       </div>
@@ -65,4 +35,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutUs;

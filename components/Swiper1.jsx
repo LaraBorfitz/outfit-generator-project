@@ -7,9 +7,9 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import BtnGnrc from "./BtnGnrc";
 import { useAppContext } from "../contexts/FunctionContext";
 import { addToCart } from "../redux/slices/cartSlice";
+import BtnGnrc from "./BtnGnrc";
 
 const OutfitCards = () => {
   const { publicClothes } = useAppContext();
@@ -35,7 +35,7 @@ const OutfitCards = () => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          height: "12vh",
+          height: "7vh",
           padding: 6,
           fontSize: "1em",
         }}

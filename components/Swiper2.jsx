@@ -91,7 +91,14 @@ const Home = () => {
       style={{
         display: "flex",
         height: "80vh",
+        width: "100vw", // Esto fuerza a usar todo el ancho de la ventana
+        position: "relative", // opcional para manejar z-index si se superpone
+        left: "50%",
+        right: "50%",
+        marginLeft: "-50vw",
+        marginRight: "-50vw",
       }}
+      className="divRecommendationsContainer"
     >
       <div className="divh2">
         <h2 className="divText">recommendations</h2>
@@ -111,16 +118,11 @@ const Home = () => {
           modules={[FreeMode]}
           className="mySwiper"
         >
-          {ropa.map(
-            (item, i) => (
-              console.log("el array de prendas publicas en SWIPER2 es: ", ropa),
-              (
-                <SwiperSlide key={i + "slide"}>
-                  <CardSwiper item={item} />
-                </SwiperSlide>
-              )
-            )
-          )}
+          {ropa.map((item, i) => (
+            <SwiperSlide key={i + "slide"}>
+              <CardSwiper item={item} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

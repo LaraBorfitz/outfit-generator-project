@@ -1,0 +1,388 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@200..800&family=Oswald:wght@200..700&family=Rampart+One&display=swap");
+
+/* Estilos generales */
+.nc-nueva-coleccion-container {
+  font-family: "Manrope", sans-serif;
+  color: black;
+  background-color: white;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.nc-nueva-coleccion-container h1,
+.nc-nueva-coleccion-container h2,
+.nc-nueva-coleccion-container h3 {
+  font-family: "Archivo Black", sans-serif;
+  margin: 0;
+}
+
+.nc-nueva-coleccion-container p {
+  margin: 0;
+}
+
+.nc-nueva-coleccion-container button {
+  font-family: "Manrope", sans-serif;
+  cursor: pointer;
+}
+
+.nc-nueva-coleccion-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Título de la colección */
+.nc-coleccion-titulo {
+  text-align: center;
+  padding: 60px 20px;
+  margin-top: 40px;
+}
+
+.nc-coleccion-titulo h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.nc-coleccion-titulo p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Presentación principal con texto vertical */
+.nc-coleccion-presentacion {
+  display: flex;
+  border-bottom: 1px solid black;
+}
+
+.nc-coleccion-items {
+  width: 90%;
+  display: flex;
+  overflow-x: auto;
+  padding: 30px 0;
+}
+
+.nc-coleccion-item {
+  min-width: 250px;
+  height: 70vh;
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nc-item-imagen {
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nc-item-imagen img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.nc-item-info {
+  height: 25%;
+  padding: 8px;
+  text-align: center;
+}
+
+.nc-item-info h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.nc-item-info p {
+  font-size: 0.9rem;
+}
+
+/* Cuadrícula de productos */
+.nc-coleccion-grid {
+  padding: 15px 20px;
+  border-bottom: 1px solid black;
+}
+
+.nc-grid-titulo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.nc-grid-titulo h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.nc-grid-titulo p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nc-grid-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nc-grid-item {
+  width: calc(33.333% - 20px);
+  border: 1px solid black;
+  min-width: 250px;
+}
+
+.nc-grid-item-imagen {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.nc-grid-item-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nc-grid-item-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-top: 1px solid black;
+}
+
+.nc-grid-item-info h3 {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Producto destacado */
+.nc-producto-destacado {
+  display: flex;
+  border-bottom: 1px solid black;
+}
+
+.nc-destacado-imagen {
+  width: 50%;
+  height: 80vh;
+  border-right: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.nc-destacado-imagen img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.nc-destacado-info {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nc-destacado-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.nc-destacado-header h2 {
+  font-size: 1.5rem;
+}
+
+.nc-destacado-precio {
+  font-size: 1.5rem;
+}
+
+.nc-destacado-descripcion,
+.nc-destacado-detalles,
+.nc-destacado-tallas {
+  margin-bottom: 30px;
+}
+
+.nc-destacado-descripcion h3,
+.nc-destacado-detalles h3,
+.nc-destacado-tallas h3 {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.nc-destacado-descripcion p,
+.nc-destacado-detalles p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.nc-tallas-opciones {
+  display: flex;
+  gap: 10px;
+}
+
+.nc-talla-opcion {
+  border: 1px solid black;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.nc-talla-opcion:hover {
+  background-color: black;
+  color: white;
+}
+
+.nc-boton-agregar {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  padding: 15px;
+  font-size: 0.9rem;
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.nc-boton-agregar:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Newsletter Section */
+.nc-newsletter-section {
+  padding: 64px 16px;
+  text-align: center;
+}
+
+.nc-newsletter-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  font-family: "Archivo Black", sans-serif;
+}
+
+.nc-newsletter-description {
+  font-size: 0.875rem;
+  margin: 0 auto 24px; /* Asegúrate de que este valor sea suficiente */
+  font-family: "Manrope", sans-serif;
+  text-align: center;
+  padding-bottom: 24px; /* Añade padding adicional en la parte inferior */
+  padding-top: 15px;
+}
+
+.nc-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.nc-newsletter-input {
+  flex-grow: 1;
+  padding: 8px 16px;
+  border: 1px solid black;
+  font-family: "Manrope", sans-serif;
+}
+
+.nc-newsletter-input:focus {
+  outline: none;
+}
+
+.nc-newsletter-button {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  padding: 8px 16px;
+  font-family: "Manrope", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nc-newsletter-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nc-coleccion-titulo h1 {
+    font-size: 1.8rem;
+  }
+
+  .nc-producto-destacado {
+    flex-direction: column;
+  }
+
+  .nc-destacado-imagen,
+  .nc-destacado-info {
+    width: 100%;
+    border-right: none;
+  }
+
+  .nc-destacado-imagen {
+    height: 50vh;
+    border-bottom: 1px solid black;
+  }
+
+  .nc-destacado-info {
+    padding: 20px;
+  }
+
+  .nc-grid-item {
+    width: calc(50% - 20px);
+  }
+
+  .nc-texto-vertical {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nc-coleccion-titulo {
+    padding: 40px 15px;
+  }
+
+  .nc-coleccion-titulo h1 {
+    font-size: 1.5rem;
+  }
+
+  .nc-grid-item {
+    width: 100%;
+  }
+
+  .nc-destacado-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nc-texto-vertical-container {
+    width: 15%;
+  }
+
+  .nc-coleccion-items {
+    width: 85%;
+  }
+
+  .nc-coleccion-item {
+    min-width: 200px;
+  }
+}
+
+/* Media query para responsive del newsletter */
+@media (min-width: 640px) {
+  .nc-newsletter-form {
+    flex-direction: row;
+  }
+
+  .nc-newsletter-title {
+    font-size: 1.875rem;
+  }
+
+  .nc-newsletter-description {
+    font-size: 1rem;
+  }
+}

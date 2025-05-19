@@ -1,0 +1,195 @@
+/* Product Section */
+.nc-product-section {
+  width: 100%;
+}
+
+.nc-product-container {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Product Image */
+.nc-product-image-container {
+  width: 100%;
+  height: 60vh;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.nc-product-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.nc-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 16px;
+  max-width: calc(100% - 32px); /* Resta el padding total horizontal */
+  max-height: calc(100% - 32px); /* Resta el padding total vertical */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.nc-product-navigation {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nc-nav-button {
+  background-color: white;
+  border: 1px solid black;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nc-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Product Details */
+.nc-product-details {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nc-product-title,
+.nc-product-price,
+.nc-section-text,
+.nc-sizes-container {
+  animation: fadeInUp 0.3s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nc-product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.nc-product-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: "Archivo Black", sans-serif;
+}
+
+.nc-product-price {
+  font-size: 1.25rem;
+  font-family: "Manrope", sans-serif;
+}
+
+.nc-product-content {
+  flex-grow: 1;
+}
+
+.nc-product-section {
+  margin-bottom: 24px;
+}
+
+.nc-section-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-family: "Manrope", sans-serif;
+}
+
+.nc-section-text {
+  font-size: 0.875rem;
+  font-family: "Manrope", sans-serif;
+}
+
+.nc-sizes-container {
+  display: flex;
+  gap: 8px;
+}
+
+.nc-size-option {
+  border: 1px solid black;
+  padding: 4px 12px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+  transition: all 0.3s;
+}
+
+.nc-size-option:hover {
+  background-color: black;
+  color: white;
+}
+
+.nc-add-to-cart-button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  padding: 12px;
+  font-family: "Manrope", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nc-add-to-cart-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .nc-product-container {
+    flex-direction: row;
+  }
+
+  .nc-product-image-container {
+    width: 50%;
+    height: 80vh;
+    border-bottom: 0;
+    border-right: 1px solid black;
+  }
+
+  .nc-product-details {
+    width: 50%;
+    padding: 40px;
+  }
+
+  .nc-product-title,
+  .nc-product-price {
+    font-size: 1.5rem;
+  }
+}

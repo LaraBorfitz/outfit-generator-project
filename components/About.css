@@ -1,62 +1,88 @@
-.divFather {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  gap: 15px;
-  font-size: 0.9em;
-  height: 100%;
-  justify-content: space-between;
-}
-
-.divh1 {
-  border-right: 1px solid black;
-  font-weight: bolder;
+/* About Us Section */
+.nc-about-section {
+  padding: 40px 16px;
   text-align: center;
-  padding: 60px;
-  font-size: 2em;
 }
 
-.divChildAbout {
-  padding: 20px;
+.nc-about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nc-about-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  font-family: "Archivo Black", sans-serif;
+}
+
+.nc-about-features {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid black;
+  margin-bottom: 24px;
 }
 
-.divSocialsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: space-between;
+.nc-about-feature {
+  font-size: 0.875rem;
+  padding: 0 8px;
+  white-space: nowrap;
+  font-family: "Manrope", sans-serif;
 }
 
-.divFollow {
-  font-weight: bolder;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 70px;
+.nc-feature-divider {
+  font-size: 0.5rem;
+  color: #666;
+  padding: 0 4px;
 }
 
-.divWorkWithUsContainer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 50px;
+.nc-outfit-generator {
+  margin-top: 16px;
 }
 
-.divWorkWithUs {
-  font-weight: bolder;
+.nc-outfit-question {
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+  font-family: "Manrope", sans-serif;
 }
 
-.divFollowIcons {
-  display: flex;
-  gap: 10px;
+.nc-outfit-button {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.divWorkImg {
-  display: flex;
-  align-items: center;
+.nc-outfit-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nc-about-features {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nc-feature-divider {
+    display: none;
+  }
+
+  .nc-about-feature {
+    padding: 4px 0;
+  }
+}
+
+@media (min-width: 640px) {
+  .nc-outfit-button {
+    min-width: 240px;
+  }
 }

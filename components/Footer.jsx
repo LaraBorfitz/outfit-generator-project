@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footerDiv">
-        © 2025 LB'S Web Development. Todos los derechos reservados.
+        <div className="footerBrand">LARA'S CLOSET</div>© 2025 LB'S Inc.
       </div>
     </footer>
   );

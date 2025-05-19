@@ -40,7 +40,12 @@ const NewHeader = () => {
         </div>
 
         <div className="divNewHeader3">
-          <div style={{ cursor: "pointer" }}>NEW COLLECTION</div>
+          <div
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate("/newcollection")}
+          >
+            NEW COLLECTION
+          </div>
           <div style={{ cursor: "pointer" }}>SALE</div>
           <div style={{ cursor: "pointer" }}>ALL</div>
         </div>
@@ -114,7 +119,7 @@ const NewHeader = () => {
           </div>
         </Menu>
       </div>
-      <div style={{ height: "7vh", backgroundColor: "blueviolet" }}>hola</div>
+      {/* <div style={{ height: "7vh", backgroundColor: "blueviolet" }}>hola</div> */}
     </>
   );
 };

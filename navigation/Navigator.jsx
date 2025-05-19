@@ -6,7 +6,8 @@ import UserCloset from "../pages/UserCloset";
 import { useAppContext } from "../contexts/FunctionContext";
 import LoadingPage from "../pages/LoadingPage";
 import Footer from "../components/Footer";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import NewCollection from "../components/NewCollection";
 
 const Navigator = () => {
   const { token, closet } = useAppContext();
@@ -27,6 +28,7 @@ const Navigator = () => {
   return (
     <>
       <Header />
+      <div style={{ height: "7vh" }} />
       <Routes>
         <Route
           path="/"
@@ -46,6 +48,7 @@ const Navigator = () => {
           }
         />
         <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/newcollection" element={<NewCollection />} />
       </Routes>
       <Footer />
     </>
@@ -58,7 +61,7 @@ const ProtectedRoute = ({ children }) => {
 };
 
 ProtectedRoute.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Navigator;
